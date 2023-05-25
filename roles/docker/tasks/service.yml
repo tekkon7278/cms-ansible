@@ -1,0 +1,11 @@
+---
+
+- name: Set docker auto start
+  service:
+    name: docker
+    enabled: yes
+
+- name: Start docker
+  service:
+    name: docker
+    state: started

@@ -1,0 +1,13 @@
+---
+
+- name: Create application service
+  copy:
+    src: docker.{{ application_name }}.service
+    dest: /etc/systemd/system/
+    mode: 0644
+    
+- name: Set application auto start
+  service:
+    name: docker.cms
+    enabled: yes
+

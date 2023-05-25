@@ -1,0 +1,23 @@
+---
+
+- name: Create application compose directories and files
+  copy:
+    src: "compose/{{ application_name }}"
+    dest: "{{ docker_compose_directory }}/"
+    
+- name: Create application log directory
+  file:
+    path: "{{ docker_mount_directory }}/{{ application_name }}/log"
+    state: directory
+    mode: 0757
+
+- name: Execute docker compose
+  shell:
+    cmd: docker compose up -d
+    chdir: "{{ docker_compose_directory }}/{{ application_name }}/"
+
+- name: Create application service
+  copy:
+    src: docker.{{ application_name }}.service
+    dest: /etc/systemd/system/
+    mode: 0644

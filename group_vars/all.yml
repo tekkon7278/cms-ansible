@@ -1,0 +1,5 @@
+---
+
+docker_mount_directory: /srv/docker/mount
+docker_compose_directory: /srv/docker/compose
+application_name: cms

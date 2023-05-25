@@ -1,0 +1,5 @@
+---
+
+- name: set timezone Asia/Tokyo
+  timezone: 
+    name: Asia/Tokyo

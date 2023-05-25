@@ -1,0 +1,10 @@
+---
+
+- name: Add docker repository
+  shell:
+    cmd: dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  
+- name: Install docker
+  dnf:
+    name: docker-ce, docker-ce-cli, containerd.io
+    state: present

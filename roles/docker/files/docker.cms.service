@@ -1,0 +1,11 @@
+[Unit]
+Description=app.net
+
+[Service]
+ExecStart=/usr/bin/docker compose -f /srv/docker/compose/cms/docker-compose.yml up
+ExecStop=/usr/bin/docker compose -f /srv/docker/compose/cms/docker-compose.yml down
+ExecReload=/usr/bin/docker compose -f /srv/docker/compose/cms/docker-compose.yml restart
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

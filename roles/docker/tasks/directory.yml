@@ -1,0 +1,11 @@
+---
+
+- name: Create compose directory
+  file:
+    path: "{{ docker_compose_directory }}"
+    state: directory
+    
+- name: Create mount directory
+  file:
+    path: "{{ docker_mount_directory }}"
+    state: directory
