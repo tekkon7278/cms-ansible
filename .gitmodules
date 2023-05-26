@@ -1,3 +1,0 @@
-[submodule "roles/application/files/compose/cms"]
-	path = roles/application/files/compose/cms
-	url = https://github.com/tekkon7278/cms-compose.git
