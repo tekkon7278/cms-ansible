@@ -1,16 +1,16 @@
 ---
 
-- name: Create application compose directories and files
-  copy:
-    src: "compose/{{ application_name }}"
-    dest: "{{ docker_compose_directory }}/"
-    
 - name: Create application log directory
   file:
     path: "{{ docker_mount_directory }}/{{ application_name }}/log"
     state: directory
     mode: 0757
 
+- name: Create application compose files from github
+  git:
+    repo: https://github.com/tekkon7278/cms-compose.git
+    dest: "{{ docker_compose_directory }}/{{ application_name }}"
+    
 - name: Execute docker compose
   shell:
     cmd: docker compose up -d

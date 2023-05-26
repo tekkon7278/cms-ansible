@@ -2,3 +2,4 @@
 
 - import_tasks: timezone.yml
 - import_tasks: package.yml
+- import_tasks: git.yml
