@@ -1,0 +1,10 @@
+---
+
+- name: Set Let's Encrypt auto update cron
+  cron:
+    name: Let's Encrypt auto update
+    minute: '1'
+    hour: '3'
+    day: '1'
+    job: "docker compose -f {{ docker_compose_directory }}/{{ application_name }}/docker-compose.yml run certbot"
+
