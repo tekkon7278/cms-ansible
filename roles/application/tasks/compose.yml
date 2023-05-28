@@ -6,6 +6,16 @@
     state: directory
     mode: 0757
 
+- name: Put compose env file
+  copy:
+    src: compose/.env
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/"
+
+- name: Put laravel env file
+  copy:
+    src: php/.env
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/php/files/"
+
 - name: Create application compose files from github
   git:
     repo: https://github.com/tekkon7278/cms-compose.git
