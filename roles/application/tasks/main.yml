@@ -2,5 +2,5 @@
 
 - import_tasks: compose.yml
 - import_tasks: post_compose.yml
-- import_tasks: certbot_cron.yml
+- import_tasks: cron.yml
 - import_tasks: service.yml
