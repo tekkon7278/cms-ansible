@@ -30,7 +30,7 @@
 - name: Put nginx conf file
   copy:
     src: nginx/proxy.conf
-    dest: "{{ docker_compose_directory }}/{{ application_name }}/nginx/files/"
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/nginx/files/conf.d/"
 
 - name: Execute docker compose
   shell:
