@@ -27,6 +27,11 @@
     src: php/.env
     dest: "{{ docker_compose_directory }}/{{ application_name }}/php/files/"
 
+- name: Put nginx conf file
+  copy:
+    src: nginx/proxy.conf
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/nginx/files/"
+
 - name: Execute docker compose
   shell:
     cmd: docker compose up -d
