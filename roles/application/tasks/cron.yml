@@ -6,7 +6,7 @@
     minute: '1'
     hour: '3'
     day: '1'
-    job: "docker compose -f {{ docker_compose_directory }}/{{ application_name }}/docker-compose.yml run certbot"
+    job: "docker compose -f {{ docker_compose_directory }}/{{ application_name }}/docker-compose.yml run certbot-renew"
 
 - name: Set MySQL backup cron
   cron:
