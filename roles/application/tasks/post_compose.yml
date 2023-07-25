@@ -5,12 +5,12 @@
     cmd: docker compose exec php php artisan migrate
     chdir: "{{ docker_compose_directory }}/{{ application_name }}/"
 
-- name: Set nginx ssl config (remove comment character)
-  shell:
-    cmd: docker compose exec web sed -i s/#// /etc/nginx/conf.d/proxy.conf
-    chdir: "{{ docker_compose_directory }}/{{ application_name }}/"
+# - name: Set nginx ssl config (remove comment character)
+#   shell:
+#     cmd: docker compose exec web sed -i s/#// /etc/nginx/conf.d/proxy.conf
+#     chdir: "{{ docker_compose_directory }}/{{ application_name }}/"
 
-- name: Restart nginx
-  shell:
-    cmd: docker compose restart web
-    chdir: "{{ docker_compose_directory }}/{{ application_name }}/"
+# - name: Restart nginx
+#   shell:
+#     cmd: docker compose restart web
+#     chdir: "{{ docker_compose_directory }}/{{ application_name }}/"
