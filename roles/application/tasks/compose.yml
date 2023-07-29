@@ -19,17 +19,17 @@
     
 - name: Put compose env file
   template:
-    src: compose/.env
+    src: ../files/compose/.env
     dest: "{{ docker_compose_directory }}/{{ application_name }}/.env"
 
 - name: Put laravel env file
   template:
-    src: php/.env
+    src: ../files/php/.env
     dest: "{{ docker_compose_directory }}/{{ application_name }}/php/files/.env"
 
 - name: Put nginx conf file
   template:
-    src: nginx/proxy.conf
+    src: ../files/nginx/proxy.conf
     dest: "{{ docker_compose_directory }}/{{ application_name }}/nginx/files/conf.d/proxy.conf"
 
 - name: Execute docker compose
