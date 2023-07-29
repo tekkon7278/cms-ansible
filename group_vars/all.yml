@@ -3,3 +3,5 @@
 docker_mount_directory: /srv/docker/mount
 docker_compose_directory: /srv/docker/compose
 application_name: cms
+app_domain: tkng.site
+app_git_url: https://github.com/tekkon7278/cms-laravel-vue.git

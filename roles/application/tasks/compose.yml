@@ -12,25 +12,25 @@
     state: directory
     mode: 0757
 
-- name: Create application compose files from github
+- name: Get application compose files from github
   git:
     repo: https://github.com/tekkon7278/cms-compose.git
     dest: "{{ docker_compose_directory }}/{{ application_name }}"
     
 - name: Put compose env file
-  copy:
+  template:
     src: compose/.env
-    dest: "{{ docker_compose_directory }}/{{ application_name }}/"
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/.env"
 
 - name: Put laravel env file
-  copy:
+  template:
     src: php/.env
-    dest: "{{ docker_compose_directory }}/{{ application_name }}/php/files/"
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/php/files/.env"
 
 - name: Put nginx conf file
-  copy:
+  template:
     src: nginx/proxy.conf
-    dest: "{{ docker_compose_directory }}/{{ application_name }}/nginx/files/conf.d/"
+    dest: "{{ docker_compose_directory }}/{{ application_name }}/nginx/files/conf.d/proxy.conf"
 
 - name: Execute docker compose
   shell:
